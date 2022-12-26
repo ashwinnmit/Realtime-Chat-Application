@@ -1,0 +1,86 @@
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+  margin-top : 25vh;
+  border-width : 10px;
+  border-color : white;
+}
+.discord-purple{
+  color : 	#5865F2;
+}
+.discord-background-purple{
+  background-color : #5865F2;
+  color : white;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.radius-control{
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  margin-bottom: 10px;
+}
+
+
+.radius-add{
+  margin-bottom: 0px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.input-container{
+  margin-bottom : 10px;
+}
+
+.logo{
+  margin-bottom : 2vh;
+  transform: rotate(45deg);
+  animation-name: rotateLogo;
+  animation-duration:10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+}
+
+.form-control:focus, a:focus
+{
+         outline: none;
+}
+.navbar-toggler:focus
+{
+         outline: none !important;
+         box-shadow: none;
+}
+
+.login-check{
+  color : white;
+}
+.header{
+  display : inline;
+  margin-left : 2vw;
+  color : #5865F2
+}
+
+.dice-header{
+  display : flex;
+  justify-content: flex-start;
+}
+
+@keyframes rotateLogo{
+  100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } 
+}
