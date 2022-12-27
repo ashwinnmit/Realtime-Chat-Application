@@ -1,7 +1,7 @@
 import React, {useRef} from "react";
-import { auth } from "../firebase";
-import "firebase/auth";
-//import handleLogin from "./handleLogin";
+import {createUserWithEmailAndPassword} from "firebase/auth";
+import {auth} from "../firebase";
+import {useHistory} from "react-router-dom";
 import "./Signup.css";
 
 var formValues = {username : "", password : ""}
@@ -9,29 +9,28 @@ function Login(){
     const userName = useRef("")
     const password = useRef("")
     const confirmPassword = useRef("")
-    
-    const handleSubmit = (e) => {
+    const navigate = useHistory();
+
+    const handleSubmit = (e)=>{
         e.preventDefault();
         const user = userName.current.value;
         const pass = password.current.value;
-        //const conf = confirmPassword.current.value;
+        const confPass = confirmPassword.current.value;
+
+        if(pass === confPass){
+            createUserWithEmailAndPassword(auth,user,pass).then(()=>{
+                navigate.push("/home");
+            }).catch((err)=>{
+                alert(err.message);
+            })
+        }
+        else{
+            alert("Password and Confirm Password did not match");
+            password.current.value = "";
+            confirmPassword.current.value = "";
+        }
         
-        // if(pass === conf){
-        //     formValues = {user, pass};
-        // }
-        // else{
-        //     alert("Error occured!!! Please try again");
-        //     password.current.value = ""
-        //     confirmPassword.current.value = ""
-        // }
-        formValues = {user, pass};
-        auth.signInWithEmailAndPassword(formValues.username, formValues.password).then(()=>{
-            console.log("Sign in succesful");
-        })
-        .catch((error)=>{
-            console.log(error);
-        })
-      };
+    }
     return (
         <main className="form-signin">
          {/* SignIn Page */}

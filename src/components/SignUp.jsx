@@ -1,7 +1,29 @@
-import React from "react";
+import React, {useRef, useEffect} from "react";
+import { auth } from "../firebase";
+import { signInWithEmailAndPassword , onAuthStateChanged} from "firebase/auth";
+import {useHistory} from "react-router-dom";
 import "./Signup.css";
 
 function SignUp(){
+    const email = useRef("");
+    const password = useRef("");
+    const nav = useHistory()
+    const handleSignIn = (e)=>{
+      const em = email.current.value;
+      const p = password.current.value;
+      signInWithEmailAndPassword(auth, em, p).then(()=>{
+        nav.push("/home");
+      }).catch((err)=>{
+        alert(err.message);
+      })
+    }
+    useEffect(()=>{
+      auth.onAuthStateChanged((user)=>{
+        if(user){
+          nav.push("/home");
+        }
+      })
+    },[])
     return (
       <main className="form-signin">
   <form>
@@ -16,16 +38,16 @@ function SignUp(){
     <h1 className="h3 mb-3 fw-normal discord-purple">Sign in</h1>
 
     <div className="form-floating">
-      <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com"/>
+      <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com" ref={email}/>
       <label for="floatingInput">Username</label>
     </div>
     <div className="form-floating">
-      <input type="password" className="form-control radius-control" id="floatingPassword" placeholder="Password"/>
+      <input type="password" className="form-control radius-control" id="floatingPassword" placeholder="Password" ref={password}/>
       <label for="floatingPassword">Password</label>
     </div>
 
 
-    <button className="w-100 btn btn-lg discord-background-purple" type="submit">Sign in</button>
+    <button className="w-100 btn btn-lg discord-background-purple" type="button" onClick={handleSignIn}>Sign in</button>
     <p className="mt-5 mb-3 discord-purple">&copy; 2021-present</p>
   </form>
   <p className="login-check">Dont Have an account??? <br/><a href="/login" className="discord-purple">Click Here</a></p>
