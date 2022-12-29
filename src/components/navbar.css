@@ -1,0 +1,54 @@
+.text-black{
+    color : whitesmoke;
+}
+
+.big-text{
+    font-size: 1.7rem;
+}
+
+.small-text{
+    font-size: 1rem;
+}
+.text-black:hover{
+    color : black;
+}
+
+
+.hover-anim1:hover{
+    background-color: #5865F2;
+}
+
+
+.text-background{
+    border-color: whitesmoke;
+}
+
+.place-right{
+    position : absolute;
+    right:5vw;
+}
+
+.profile{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+.pic{
+    border-radius: 50%;
+    position: relative;
+    top : 2vh;
+}
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .big-text{
+        position: relative;
+        right : 15vw;
+    }
+    .place-right{
+        position: relative;
+        left : 0vw;
+    }
+    .profile{
+        gap : 10px;
+    }
+}

@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import { signOut , onAuthStateChanged} from "firebase/auth";
 import { useHistory } from "react-router-dom";
 import { auth } from "../firebase";
+import Navbar from "./Navbar";
 
 function Home(){
     const nav = useHistory();
@@ -25,8 +26,8 @@ function Home(){
     }
     return (
         <div>
-            <h1>Hi {userName} Firebase Works at last</h1>
-            <button onClick={handleSignOut}>Sign Out</button>
+            <Navbar name={userName}/>
+            <button onClick={handleSignOut} type="button">Sign Out</button>
         </div>
     )
 }
