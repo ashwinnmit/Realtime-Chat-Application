@@ -1,0 +1,21 @@
+.card{
+    max-width: 300px;
+    max-height: 500px;
+    background-color: #5865F2;
+    margin : 0 auto;
+    margin-top : 50vh;
+}
+
+.upper-card{
+    background-color: antiquewhite;
+}
+
+.profile-image{
+    width : 90px;
+    height : 90px;
+    border-radius: 50%;
+}
+
+.border-styles{
+    border-radius: 20%;
+}

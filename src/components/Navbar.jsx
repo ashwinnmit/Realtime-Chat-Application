@@ -1,5 +1,6 @@
 import React from "react";
 import "./navbar.css"
+import { Avatar } from "react-lorem-ipsum";
 
 function Navbar(props){
 
@@ -37,7 +38,7 @@ function Navbar(props){
            <input type="text" placeholder="Search..."/>
            <span className="tooltip">Search</span>
         </li>
-        <li>
+        <li data-bs-toggle="modal" data-bs-target="#staticBackdrop">
          <a href="#">
            <i className='bx bx-user' ></i>
            <span className="links_name">User</span>
@@ -53,7 +54,8 @@ function Navbar(props){
        </li>
        <li className="profile">
            <div className="profile-details">
-             {/* <img src="profile.jpg" alt="profileImg"> */}
+             {/* <img src="C:/Users/Asus/Documents/GitHub/NH2023_V1/src/assets/Ashwin.png" alt="profileImg" /> */}
+             <Avatar data-bs-toggle="modal" data-bs-target="#staticBackdrop"/>
              <div className="name_job">
                <div className="name">{props.name}</div>
                {/* <div className="job">Web designer</div> */}

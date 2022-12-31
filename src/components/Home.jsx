@@ -2,7 +2,9 @@ import React, {useEffect, useState} from "react";
 import { signOut , onAuthStateChanged} from "firebase/auth";
 import { useHistory } from "react-router-dom";
 import { auth } from "../firebase";
+import Profile from "./Profile";
 import Navbar from "./Navbar";
+
 
 function Home(){
     const nav = useHistory();
@@ -27,7 +29,7 @@ function Home(){
     return (
         <div>
             <Navbar name={userName} click={handleSignOut}/>
-            {/* <button onClick={handleSignOut} type="button">Sign Out</button> */}
+            <Profile name={userName} />
         </div>
     )
 }
