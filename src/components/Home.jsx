@@ -26,10 +26,11 @@ function Home(){
     }
     return (
         <div>
-            <Navbar name={userName}/>
-            <button onClick={handleSignOut} type="button">Sign Out</button>
+            <Navbar name={userName} click={handleSignOut}/>
+            {/* <button onClick={handleSignOut} type="button">Sign Out</button> */}
         </div>
     )
 }
+
 
 export default Home;
