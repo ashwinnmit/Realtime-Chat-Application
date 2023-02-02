@@ -19,3 +19,24 @@
 .border-styles{
     border-radius: 20%;
 }
+
+.profile-div{
+    display : flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.username-profile{
+    flex-shrink: 100;
+}
+
+.chat-box-container{
+    max-width: 90vw;
+    margin-left:20vw;
+}
+
+.app-container{
+    display:flex;
+    justify-content: stretch;
+}
